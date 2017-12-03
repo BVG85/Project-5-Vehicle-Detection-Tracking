@@ -16,7 +16,7 @@ The goals / steps of this project are the following:
 [image1]: ./output_images/carposition.png
 [image2]: ./output_images/data_vis.png
 [image3]: ./output_images/data_vis2.png 
-[image4]: ./output_images/prediction.png
+[image4]: ./output_images/prediction1.png
 [image5]: ./output_images/im1.png
 [image6]: ./output_images/heatmap.png
 [image7]: ./examples/output_bboxes.png
@@ -63,6 +63,7 @@ Test Accuracy of SVC =  0.9932
 
 Various combinations of parameters and color spaces were explored. These are the final parameters used:
 
+```python
 color_space = 'HSV' # Can be RGB, HSV, LUV, HLS, YUV, YCrCb ## HSV
 orient = 18  # HOG orientations ## 18
 pix_per_cell = 8 # HOG pixels per cell ## 8
@@ -74,10 +75,13 @@ spatial_feat = True # Spatial features on or off
 hist_feat = True # Histogram features on or off
 hog_feat = True # HOG features on or off
 y_start_stop = [350, 650] # Min and max in y to search in slide_window()
+```
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using...
+A linear SVM was trained using HOG and color features, with parameters mentioned above.The result on a single image can be seen below:
+
+![alt text][image4]
 
 ### Sliding Window Search
 
