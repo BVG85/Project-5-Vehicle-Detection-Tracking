@@ -36,28 +36,44 @@ This will serves as the writeup/ README.
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
-The code for this step is contained in the first code cell of the IPython notebook (or in lines # through # of the file called `some_file.py`).  
+The code for this step is contained in the IPython notebook. The functions were obtained from the Udacity course material.
 
-I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-
+All the `vehicle` and `non-vehicle` images were read in.  Here is an example of one of each of the `vehicle` and `non-
 vehicle` classes:
 
 `vehicle` data visualization:
+
 <img src="https://github.com/BVG85/Project-5-Vehicle-Detection-Tracking/blob/master/output_images/data_vis.png" width="200" height="200" /> 
 
 `non-vehicle` data visualization:
+
 <img src="https://github.com/BVG85/Project-5-Vehicle-Detection-Tracking/blob/master/output_images/data_vis2.png" width="200" height="200" />
 
+The HSV color space was used, as good results were obtained during the lessons with this color space. Other parameters such as `orientations`, `pixels_per_cell`, `cells_per_block`, `hog_channel`, `spacial size` and `hist_bins` were explored.  
 
-I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
+A linear SVC was used and the following results were obtained
 
-Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
+Using: 18 orientations 8 pixels per cell and 2 cells per block
+Feature vector length: 11448
+3.22 Seconds to train SVC...
+Test Accuracy of SVC =  0.9932
 
-
-![alt text][image2]
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of parameters and...
+Various combinations of parameters and color spaces were explored. These are the final parameters used:
+
+color_space = 'HSV' # Can be RGB, HSV, LUV, HLS, YUV, YCrCb ## HSV
+orient = 18  # HOG orientations ## 18
+pix_per_cell = 8 # HOG pixels per cell ## 8
+cell_per_block = 2 # HOG cells per block ## 2
+hog_channel = 'ALL' # Can be 0, 1, 2, or "ALL"
+spatial_size = (16, 16) # Spatial binning dimensions
+hist_bins = 32    # Number of histogram bins
+spatial_feat = True # Spatial features on or off
+hist_feat = True # Histogram features on or off
+hog_feat = True # HOG features on or off
+y_start_stop = [350, 650] # Min and max in y to search in slide_window()
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
