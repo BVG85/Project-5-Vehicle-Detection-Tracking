@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 [image5]: ./output_images/im1.png
 [image6]: ./output_images/heatmap.png
 [image7]: ./examples/output_bboxes.png
-[video1]: ./output_video_reSub.mp4
+[video1]: ./output_video_resub.mp4
 
 ### [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 #### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -99,7 +99,7 @@ The `find_cars` function was used, with a YCrCb color space, utilizing all the c
 ### Video Implementation
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-Here's a [link to my video result](./output_video_reSub.mp4)
+Here's a [link to my video result](./output_video_resub.mp4)
 
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
