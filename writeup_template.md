@@ -92,9 +92,9 @@ The implementation over a single image can be seen below:
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
+The `find_cars` function was used, with a HSV color space, utilizing all the channels of HOG features, as well as spatially binned color and histogtams of color. Here are some example images:
 
-![alt text][image4]
+![alt text][image5]
 ---
 
 ### Video Implementation
