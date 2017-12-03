@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 [image1]: ./output_images/carposition.png
 [image2]: ./output_images/data_vis.png
-[image3]: ./output_images/data_vis2.png
+[image3]: ./output_images/data_vis2.png 
 [image4]: ./output_images/prediction.png
 [image5]: ./output_images/im1.png
 [image6]: ./output_images/heatmap.png
@@ -38,9 +38,14 @@ This will serves as the writeup/ README.
 
 The code for this step is contained in the first code cell of the IPython notebook (or in lines # through # of the file called `some_file.py`).  
 
-I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
+I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-
+vehicle` classes:
 
-![alt text][image2]![alt text][image3]
+`vehicle` data visualization:
+<img src="https://github.com/BVG85/Project-5-Vehicle-Detection-Tracking/blob/master/output_images/data_vis.png" width="200" height="200" /> 
+
+`non-vehicle` data visualization:
+<img src="https://github.com/BVG85/Project-5-Vehicle-Detection-Tracking/blob/master/output_images/data_vis2.png" width="200" height="200" />
 
 
 I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
