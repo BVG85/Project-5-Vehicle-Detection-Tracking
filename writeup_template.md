@@ -79,17 +79,16 @@ y_start_stop = [350, 650] # Min and max in y to search in slide_window()
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-A linear SVM was trained using HOG and color features, with parameters mentioned above.The result on a single image can be seen below:
-
-![alt text][image4]
+A linear SVM was trained using HOG and color features, with parameters mentioned above.
 
 ### Sliding Window Search
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
+The sliding window search was performed over a single image. Parameters were adjusted till results were satisfactory.
+The implementation over a single image can be seen below:
 
-![alt text][image3]
+![alt text][image4]
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
