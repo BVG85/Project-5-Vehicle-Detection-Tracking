@@ -49,14 +49,13 @@ vehicle` classes:
 
 <img src="https://github.com/BVG85/Project-5-Vehicle-Detection-Tracking/blob/master/output_images/data_vis2.png" width="200" height="200" />
 
-The HSV color space was used, as good results were obtained during the lessons with this color space. Other parameters such as `orientations`, `pixels_per_cell`, `cells_per_block`, `hog_channel`, `spacial size` and `hist_bins` were explored.  
+The HSV color space was used initially, as good results were obtained during the lessons with this color space. However after an initial review this was changed to YCrCb with better results. Other parameters such as `orientations`, `pixels_per_cell`, `cells_per_block`, `hog_channel`, `spacial size` and `hist_bins` were explored.  
 
 A linear SVC was used and the following results were obtained
-
-Using: 18 orientations 8 pixels per cell and 2 cells per block
-Feature vector length: 11448
-3.22 Seconds to train SVC...
-Test Accuracy of SVC =  0.9932
+Using: 9 orientations 8 pixels per cell and 2 cells per block
+Feature vector length: 6156
+11.7 Seconds to train SVC...
+Test Accuracy of SVC =  0.9882
 
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
@@ -64,8 +63,8 @@ Test Accuracy of SVC =  0.9932
 Various combinations of parameters and color spaces were explored. These are the final parameters used:
 
 ```python
-color_space = 'HSV' # Can be RGB, HSV, LUV, HLS, YUV, YCrCb ## HSV
-orient = 18  # HOG orientations ## 18
+color_space = 'YCrCb' # Can be RGB, HSV, LUV, HLS, YUV, YCrCb ## HSV
+orient = 9  # HOG orientations ## 18
 pix_per_cell = 8 # HOG pixels per cell ## 8
 cell_per_block = 2 # HOG cells per block ## 2
 hog_channel = 'ALL' # Can be 0, 1, 2, or "ALL"
@@ -92,7 +91,7 @@ The implementation over a single image can be seen below:
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-The `find_cars` function was used, with a HSV color space, utilizing all the channels of HOG features, as well as spatially binned color and histogtams of color. Here are some example images:
+The `find_cars` function was used, with a YCrCb color space, utilizing all the channels of HOG features, as well as spatially binned color and histogtams of color. The cells_per_step were reduced to increase the overlap. Here are some example images:
 
 ![alt text][image5]
 ---
@@ -100,7 +99,7 @@ The `find_cars` function was used, with a HSV color space, utilizing all the cha
 ### Video Implementation
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-Here's a [link to my video result](./output_video.mp4)
+Here's a [link to my video result](./output_video_reSub.mp4)
 
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
