@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 [image5]: ./output_images/im1.png
 [image6]: ./output_images/heatmap.png
 [image7]: ./examples/output_bboxes.png
-[video1]: ./output_video.mp4
+[video1]: ./output_video_reSub.mp4
 
 ### [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 #### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -118,5 +118,5 @@ Here's an example result showing the heatmap and resulting bounding box:
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-I struggled to generate a robust pipeline. False positives still show up in the video feed. Also, at times the pipeline fails to identify true positives. More exploration will be done with thresholding, as well as different colorspaces.
+The YCrCb color space improved the results significantly from the HSV color space. False positives still show up in the video feed. More exploration will be done with thresholding and scaling.
 
